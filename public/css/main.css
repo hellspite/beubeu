@@ -1,5 +1,16 @@
+.navbar-inverse{
+    background-color:#000 !important;
+}
+
+.nav > li{
+    text-transform:uppercase !important;
+    font-size:13px;
+    font-weight:bold;
+    border-right:1px solid #444;
+}
+
 .deadlines{
-    background-color:#252525;
+    background-color:#222;
     padding:10px;
     color:#fff;
 }

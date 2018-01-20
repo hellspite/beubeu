@@ -5,14 +5,50 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{% block title %}Beu Beu Art Festival{% endblock %}</title>
         {% block stylesheets %}
-            <link href="{{ asset('build/css/app.css') }}" rel="stylesheet" />
-            <link href="{{ asset('css/main.css') }}" rel="stylesheet" />
+        <link href="{{ asset('build/css/app.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet" />
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+        <div class="container-fluid">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="deadlines">
+                    test
+                </div>
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Beu-Beu Logo</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Programma <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">Mostre</a></li>
+                            <li><a href="#">Art Market</a></li>
+                            <li><a href="#">Concerti e Spettacoli</a></li>
+                            <li><a href="#">Reading</a></li>
+                            <li><a href="#">Workshop</a></li>
+                            <li><a href="#">Interventi Urbani</a></li>
+                            <li><a href="#">Eventi Collaterali</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Collaborazioni</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+        {% endblock %}
         {% block javascripts %}
-            <script src="{{ asset('build/js/app.js') }}"></script>
+        <script src="{{ asset('build/js/app.js') }}"></script>
         {% endblock %}
     </body>
 </html>
