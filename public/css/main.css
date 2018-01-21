@@ -19,6 +19,26 @@
     color:#fff;
 }
 
+.carousel-container{
+    margin-top:90px;
+}
+
 .carousel-inner img{
-    max-height:800px;
+    max-height:750px;
+}
+
+.news-container{
+    border-top:solid 10px #000;
+    margin-top:40px;
+    padding:0;
+}
+
+.news-container h1, .news-title h2{
+    font-weight:1000;
+    color:#000;
+}
+
+.news-img{
+    max-height:300px;
+    overflow:hidden;
 }
