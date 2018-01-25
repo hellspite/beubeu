@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,6 +36,12 @@ class Exhibit
     * @ORM\Column(type="integer") 
     */
     private $year;
+
+    /**
+    * @Gedmo\Timestampable(on="create")
+    * @ORM\Column(type="datetime")
+    */
+    private $created;
 
     public function getId(){
         return $this->id;
@@ -70,5 +77,9 @@ class Exhibit
 
     public function setYear($year){
         $this->year = $year;
+    }
+
+    public function getCreated(){
+        return $this->created;
     }
 }
