@@ -20,12 +20,16 @@ class DefaultController extends Controller{
 
         $articles = [];
         foreach($news as $n){
-            //TODO: Rendere dinamica la selezione del repository
-            $articles[] = $this->getDoctrine()
-                ->getRepository(Exhibit::class)
-                ->findById($n->getSourceId());
+            $class = $n->getSource();
+            switch($class){
+                case "Exhibit":
+                    $articles[] = $this->getDoctrine()
+                        ->getRepository(Exhibit::class)
+                        ->findById($n->getSourceId());
+                    break;
+            }
         }
         
-        return $this->render('default/index.html.twig');
+        return $this->render('default/index.html.twig', array('articles' => $articles));
     }
 }
