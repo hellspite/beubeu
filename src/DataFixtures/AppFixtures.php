@@ -16,6 +16,26 @@ class AppFixtures extends Fixture{
             $exhibit->setTitle("Mostra ".$i);
             $exhibit->setImage("news".rand(1,3).".jpg");
             $exhibit->setDescription("Descrizione mostra ".$i);
+            $exhibit->setYear(2017);
+
+            $manager->persist($exhibit);
+            $manager->flush();
+
+            $news = new News();
+
+            $news->setSourceId($exhibit->getId());
+            $news->setSource('Exhibit');
+
+            $manager->persist($news);
+            $manager->flush();
+        } 
+
+        for($i=1; $i<11; $i++){
+            $exhibit = new Exhibit();
+
+            $exhibit->setTitle("Mostra ".$i);
+            $exhibit->setImage("news".rand(1,3).".jpg");
+            $exhibit->setDescription("Descrizione mostra ".$i);
             $exhibit->setYear(2018);
 
             $manager->persist($exhibit);
