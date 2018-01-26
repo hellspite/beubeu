@@ -13,16 +13,12 @@ class NewsRepository extends ServiceEntityRepository
         parent::__construct($registry, News::class);
     }
 
-    /*
-    public function findBySomething($value)
-    {
+    public function getAllByDate(){
         return $this->createQueryBuilder('n')
-            ->where('n.something = :value')->setParameter('value', $value)
-            ->orderBy('n.id', 'ASC')
-            ->setMaxResults(10)
+            ->orderBy('n.created', 'DESC')
+            ->setMaxResults(6)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 }

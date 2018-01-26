@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\NewsRepository")
@@ -26,6 +27,12 @@ class News
     */
     private $source;
 
+    /**
+    * @Gedmo\Timestampable(on="create")
+    * @ORM\Column(type="datetime")
+    */
+    private $created;
+
     public function setSourceId($sourceId){
         $this->sourceId = $sourceId;
     }
@@ -40,5 +47,9 @@ class News
 
     public function getSource(){
         return $this->source;
+    }
+
+    public function getCreated(){
+        return $this->created;    
     }
 }
