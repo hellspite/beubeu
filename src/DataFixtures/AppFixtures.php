@@ -14,7 +14,7 @@ class AppFixtures extends Fixture{
             $exhibit = new Exhibit();
 
             $exhibit->setTitle("Mostra ".$i);
-            $exhibit->setImage("locandina".$i);
+            $exhibit->setImage("news".rand(1,3).".jpg");
             $exhibit->setDescription("Descrizione mostra ".$i);
             $exhibit->setYear(2018);
 
