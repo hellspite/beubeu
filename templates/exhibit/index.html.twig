@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<div class="container exhibit-container">
+    <h1>Mostre</h1>
+
+    {% for e in new %}
+        {{ e.title }}
+    {% endfor %}
+</div>
+
+{% endblock %}

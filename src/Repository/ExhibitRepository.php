@@ -13,16 +13,25 @@ class ExhibitRepository extends ServiceEntityRepository
         parent::__construct($registry, Exhibit::class);
     }
 
-    /*
-    public function findBySomething($value)
-    {
+    public function getThisYearByDate(){
+        $thisYear = date("Y");
+
         return $this->createQueryBuilder('e')
-            ->where('e.something = :value')->setParameter('value', $value)
-            ->orderBy('e.id', 'ASC')
-            ->setMaxResults(10)
+            ->where('e.year = :year')->setParameter('year', $thisYear)
+            ->orderBy('e.created', 'DESC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
+    public function getOldByDate(){
+        $thisYear = date("Y");
+
+        return $this->createQueryBuilder('e')
+            ->where('e.year < :year')->setParameter('year', $thisYear)
+            ->orderBy('e.created', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

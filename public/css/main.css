@@ -45,7 +45,7 @@
     padding:0;
 }
 
-.news-container h1, .news-title h2{
+.news-container h1, .exhibit-container h1, .news-title h2{
     font-weight:1000;
     color:#000;
 }
@@ -53,4 +53,10 @@
 .news-img{
     max-height:300px;
     overflow:hidden;
+}
+
+.exhibit-container{
+    border-top:solid 10px #000;
+    margin-top:120px;
+    padding:0;
 }

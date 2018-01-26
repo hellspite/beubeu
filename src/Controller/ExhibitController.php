@@ -11,12 +11,19 @@ use App\Entity\News;
 class ExhibitController extends Controller
 {
     /**
-     * @Route("/exhibit", name="exhibit")
+     * @Route("/mostre", name="exhibit")
      */
     public function index()
     {
-        // replace this line with your own code!
-        return $this->render('@Maker/demoPage.html.twig', [ 'path' => str_replace($this->getParameter('kernel.project_dir').'/', '', __FILE__) ]);
+        $exhibits_new = $this->getDoctrine()
+            ->getRepository(Exhibit::class)
+            ->getThisYearByDate();
+
+        $exhibits_old = $this->getDoctrine()
+            ->getRepository(Exhibit::class)
+            ->getOldByDate();
+
+        return $this->render('exhibit/index.html.twig', array('new' => $exhibits_new, 'old' => $exhibits_old));
     }
 
     /**
