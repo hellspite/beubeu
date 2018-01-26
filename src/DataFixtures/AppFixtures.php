@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Exhibit;
+use App\Entity\News;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -18,8 +19,16 @@ class AppFixtures extends Fixture{
             $exhibit->setYear(2018);
 
             $manager->persist($exhibit);
+            $manager->flush();
+
+            $news = new News();
+
+            $news->setSourceId($exhibit->getId());
+            $news->setSource('Exhibit');
+
+            $manager->persist($news);
+            $manager->flush();
         } 
 
-        $manager->flush();
     }
 }

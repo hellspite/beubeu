@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use App\Entity\Exhibit;
+use App\Entity\News;
 
 class ExhibitController extends Controller
 {
@@ -23,6 +24,8 @@ class ExhibitController extends Controller
     */
     public function newExhibit(){
         //TODO: Impostare il metodo reale
+        $em = $this->getDoctrine()->getManager(); 
+
         $exhibit = new Exhibit();    
 
         $exhibit->setTitle('Test');
@@ -30,9 +33,16 @@ class ExhibitController extends Controller
         $exhibit->setDescription('test test test test');
         $exhibit->setYear(2018);
 
-        $em = $this->getDoctrine()->getManager(); 
-
         $em->persist($exhibit);
+
+        $em->flush();
+
+        $news = new News();
+        $news->setSourceId($exhibit->getId());
+        $news->setSource('Exhibit');
+
+        $em->persist($news);
+
         $em->flush();
     }
 }
