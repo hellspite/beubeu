@@ -38,6 +38,12 @@ class Exhibit
     private $year;
 
     /**
+    * @Gedmo\Slug(fields={"title"})
+    * @ORM\Column(length=300, unique=true)
+    */
+    private $slug;
+
+    /**
     * @Gedmo\Timestampable(on="create")
     * @ORM\Column(type="datetime")
     */
@@ -77,6 +83,10 @@ class Exhibit
 
     public function setYear($year){
         $this->year = $year;
+    }
+
+    public function getSlug(){
+        return $this->slug;
     }
 
     public function getCreated(){
