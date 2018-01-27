@@ -4,9 +4,35 @@
 <div class="container exhibit-container">
     <h1>Mostre</h1>
 
-    {% for e in new %}
-        {{ e.title }}
+    <div class="row">
+    {% for key, e in new %}
+        <div class="col-sm-3">
+            <div class="news-img"><img src="{{ asset('images/' ~ e.image) }}" /></div>
+            <div class="exhibit-title"><h2>{{ e.title }}</h2></div>
+        </div>
+        {% if (key+1)%4 == 0 and (key+1) < new|length %}
+            </div>
+            <div class="row">
+        {%  endif %}
     {% endfor %}
+    </div>
+
+</div>
+
+<div class="container exhibit-container">
+    <h1>Edizioni Passate</h1>
+    <div class="row">
+    {% for key, e in old %}
+        <div class="col-sm-3">
+            <div class="news-img"><img src="{{ asset('images/' ~ e.image) }}" /></div>
+            <div class="exhibit-title"><h2>{{ e.title }}</h2></div>
+        </div>
+        {% if (key+1)%4 == 0 and (key+1) < new|length %}
+            </div>
+            <div class="row">
+        {%  endif %}
+    {% endfor %}
+    </div>
 </div>
 
 {% endblock %}

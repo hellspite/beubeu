@@ -10,7 +10,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 class AppFixtures extends Fixture{
 
     public function load(ObjectManager $manager){
-        for($i=1; $i<11; $i++){
+        for($i=11; $i<21; $i++){
             $exhibit = new Exhibit();
 
             $exhibit->setTitle("Mostra ".$i);

@@ -45,7 +45,7 @@
     padding:0;
 }
 
-.news-container h1, .exhibit-container h1, .news-title h2{
+.news-container h1, .exhibit-container h1, .news-title h2, .exhibit-title h2{
     font-weight:1000;
     color:#000;
 }
@@ -59,4 +59,8 @@
     border-top:solid 10px #000;
     margin-top:120px;
     padding:0;
+}
+
+.exhibit-title{
+    text-align:center;
 }
