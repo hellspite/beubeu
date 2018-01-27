@@ -1,5 +1,11 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}{{ parent() }} - Mostre {% endblock %}
+
+{% block menu %}
+    {{ include('menu.html.twig', {'active': 'exhibit'}) }}
+{% endblock %}
+
 {% block content %}
 <div class="container exhibit-container">
     <h1>Mostre</h1>
