@@ -27,6 +27,13 @@ class ExhibitController extends Controller
     }
 
     /**
+    * @Route("/mostre/{slug}", name="exhibit_show")
+    */
+    public function show($slug){
+        return $this->render('exhibit/show.html.twig');
+    }
+
+    /**
     * @Route("/exhibit/new", name="exhibit_new")
     */
     public function newExhibit(){
