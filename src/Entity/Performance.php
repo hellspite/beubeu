@@ -35,7 +35,7 @@ class Performance
     /**
     * @ORM\Column(type="datetime") 
     */
-    private $when;
+    private $whendate;
 
     /**
     * @Gedmo\Slug(fields={"title"})
@@ -77,12 +77,12 @@ class Performance
         $this->description = $description;
     }
 
-    public function getWhen(){
-        return $this->when;
+    public function getWhendate(){
+        return $this->whendate;
     }
 
-    public function setWhen($when){
-        $this->when = $when;
+    public function setWhendate($whendate){
+        $this->whendate = $whendate;
     }
 
     public function getSlug(){

@@ -17,7 +17,7 @@ class PerformanceRepository extends ServiceEntityRepository
         $thisYear = date("Y");
 
         return $this->createQueryBuilder('e')
-            ->where('YEAR(e.when) = :when')->setParameter('when', $thisYear)
+            ->where('YEAR(e.whendate) = :whendate')->setParameter('whendate', $thisYear)
             ->orderBy('e.created', 'DESC')
             ->getQuery()
             ->getResult()
@@ -28,7 +28,7 @@ class PerformanceRepository extends ServiceEntityRepository
         $thisYear = date("Y");
 
         return $this->createQueryBuilder('e')
-            ->where('YEAR(e.when) < :when')->setParameter('when', $thisYear)
+            ->where('YEAR(e.whendate) < :whendate')->setParameter('whendate', $thisYear)
             ->orderBy('e.created', 'DESC')
             ->getQuery()
             ->getResult()

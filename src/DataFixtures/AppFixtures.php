@@ -54,10 +54,10 @@ class AppFixtures extends Fixture{
         for($i=11; $i<21; $i++){
             $performance = new Performance();
 
-            $performance->setTitle("Mostra ".$i);
+            $performance->setTitle("Performance ".$i);
             $performance->setImage("performance".rand(1,3).".jpg");
             $performance->setDescription("Descrizione performance ".$i);
-            $performance->setWhen('2017-8-19');
+            $performance->setWhendate(new \DateTime('2017-8-19'));
 
             $manager->persist($performance);
             $manager->flush();
@@ -74,10 +74,10 @@ class AppFixtures extends Fixture{
         for($i=1; $i<11; $i++){
             $performance = new Performance();
 
-            $performance->setTitle("Mostra ".$i);
-            $performance->setImage("news".rand(1,3).".jpg");
-            $performance->setDescription("Descrizione mostra ".$i);
-            $performance->setWhen('2018-08-20');
+            $performance->setTitle("Performance ".$i);
+            $performance->setImage("performance".rand(1,3).".jpg");
+            $performance->setDescription("Descrizione performance ".$i);
+            $performance->setWhendate(new \DateTime('2018-08-20'));
 
             $manager->persist($performance);
             $manager->flush();
