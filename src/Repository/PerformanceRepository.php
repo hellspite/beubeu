@@ -16,27 +16,26 @@ class PerformanceRepository extends ServiceEntityRepository
     public function getThisYearByDate(){
 
         //TODO: Sistemare funzione YEAR nella query
-        $emConfig = $this->getEntityManager()->getConfiguration();
-        $emConfig->addCustomDatetimeFunction('YEAR', 'Stof\DoctrineExtensions\Query\Mysql\Year');
-
+        
         $thisYear = date("Y");
 
-        return $this->createQueryBuilder('e')
-            ->where('YEAR(e.whendate) = :whendate')->setParameter('whendate', $thisYear)
-            ->orderBy('e.created', 'DESC')
-            ->getQuery()
-            ->getResult()
-            ;
+        $conn = $this->getEntityManager()
+            ->getConnection();
+        $sql = 'SELECT * FROM performance WHERE YEAR(whendate) = '.$thisYear;
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+
     }
 
     public function getOldByDate(){
         $thisYear = date("Y");
 
-        return $this->createQueryBuilder('e')
-            ->where('YEAR(e.whendate) < :whendate')->setParameter('whendate', $thisYear)
-            ->orderBy('e.created', 'DESC')
-            ->getQuery()
-            ->getResult()
-            ;
+        $conn = $this->getEntityManager()
+            ->getConnection();
+        $sql = 'SELECT * FROM performance WHERE YEAR(whendate) < '.$thisYear;
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
     }
 }
