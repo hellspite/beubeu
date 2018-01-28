@@ -21,7 +21,7 @@
                 <li {% if active == 'exhibit' %}class="active"{% endif %}><a href="{{ path('exhibit') }}">Mostre</a></li>
                 <li><a href="#">Art Market</a></li>
                 <li {% if active == 'performance' %}class="active"{% endif %}><a href="{{ path('performance') }}">Concerti e Performance</a></li>
-                <li><a href="#">Incontri</a></li>
+                <li {% if active == 'meeting' %}class="active"{% endif %}><a href="{{ path('meeting') }}">Incontri</a></li>
                 <li><a href="#">Workshop</a></li>
                 <li><a href="#">Interventi Urbani</a></li>
                 <li><a href="#">Eventi Collaterali</a></li>

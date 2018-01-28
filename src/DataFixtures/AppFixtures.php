@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\Exhibit;
 use App\Entity\News;
 use App\Entity\Performance;
+use App\Entity\Meeting;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -86,6 +87,46 @@ class AppFixtures extends Fixture{
 
             $news->setSourceId($performance->getId());
             $news->setSource('Performance');
+
+            $manager->persist($news);
+            $manager->flush();
+        } 
+
+        for($i=11; $i<21; $i++){
+            $meeting = new Meeting();
+
+            $meeting->setTitle("Meeting ".$i);
+            $meeting->setImage("meeting".rand(1,3).".jpg");
+            $meeting->setDescription("Descrizione incontro ".$i);
+            $meeting->setWhendate(new \DateTime('2017-8-19'));
+
+            $manager->persist($meeting);
+            $manager->flush();
+
+            $news = new News();
+
+            $news->setSourceId($meeting->getId());
+            $news->setSource('Meeting');
+
+            $manager->persist($news);
+            $manager->flush();
+        } 
+
+        for($i=1; $i<11; $i++){
+            $meeting = new Meeting();
+
+            $meeting->setTitle("Meeting ".$i);
+            $meeting->setImage("meeting".rand(1,3).".jpg");
+            $meeting->setDescription("Descrizione incontro ".$i);
+            $meeting->setWhendate(new \DateTime('2018-08-20'));
+
+            $manager->persist($meeting);
+            $manager->flush();
+
+            $news = new News();
+
+            $news->setSourceId($meeting->getId());
+            $news->setSource('Meeting');
 
             $manager->persist($news);
             $manager->flush();

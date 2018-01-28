@@ -18,7 +18,7 @@ class MeetingRepository extends ServiceEntityRepository
 
         $conn = $this->getEntityManager()
             ->getConnection();
-        $sql = 'SELECT * FROM performance WHERE YEAR(whendate) = '.$thisYear;
+        $sql = 'SELECT * FROM meeting WHERE YEAR(whendate) = '.$thisYear;
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -30,7 +30,7 @@ class MeetingRepository extends ServiceEntityRepository
 
         $conn = $this->getEntityManager()
             ->getConnection();
-        $sql = 'SELECT * FROM performance WHERE YEAR(whendate) < '.$thisYear;
+        $sql = 'SELECT * FROM meeting WHERE YEAR(whendate) < '.$thisYear;
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();

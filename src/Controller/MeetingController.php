@@ -11,7 +11,7 @@ use App\Entity\News;
 class MeetingController extends Controller
 {
     /**
-     * @Route("/meeting", name="meeting")
+     * @Route("/incontri", name="meeting")
      */
     public function index()
     {
@@ -27,7 +27,7 @@ class MeetingController extends Controller
     }
 
     /**
-    * @Route("/meeting/{slug}", name="meeting_show")
+    * @Route("/incontri/{slug}", name="meeting_show")
     */
     public function show($slug){
         
