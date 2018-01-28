@@ -14,6 +14,11 @@ class PerformanceRepository extends ServiceEntityRepository
     }
 
     public function getThisYearByDate(){
+
+        //TODO: Sistemare funzione YEAR nella query
+        $emConfig = $this->getEntityManager()->getConfiguration();
+        $emConfig->addCustomDatetimeFunction('YEAR', 'Stof\DoctrineExtensions\Query\Mysql\Year');
+
         $thisYear = date("Y");
 
         return $this->createQueryBuilder('e')
@@ -21,7 +26,7 @@ class PerformanceRepository extends ServiceEntityRepository
             ->orderBy('e.created', 'DESC')
             ->getQuery()
             ->getResult()
-        ;
+            ;
     }
 
     public function getOldByDate(){
@@ -32,6 +37,6 @@ class PerformanceRepository extends ServiceEntityRepository
             ->orderBy('e.created', 'DESC')
             ->getQuery()
             ->getResult()
-        ;
+            ;
     }
 }
