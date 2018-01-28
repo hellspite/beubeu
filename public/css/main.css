@@ -64,3 +64,13 @@
 .exhibit-title{
     text-align:center;
 }
+
+.exhibit-image img{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.exhibit-desc{
+    margin-top:20px;
+}

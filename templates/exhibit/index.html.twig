@@ -13,8 +13,16 @@
     <div class="row">
     {% for key, e in new %}
         <div class="col-sm-3">
-            <div class="news-img"><img src="{{ asset('images/' ~ e.image) }}" /></div>
-            <div class="exhibit-title"><h2>{{ e.title }}</h2></div>
+            <div class="news-img">
+                <a href="{{ path('exhibit_show', {'slug': e.slug}) }}">
+                    <img src="{{ asset('images/' ~ e.image) }}" />
+                </a>
+            </div>
+            <div class="exhibit-title">
+                <a href="{{ path('exhibit_show', {'slug': e.slug}) }}">
+                    <h2>{{ e.title }}</h2>
+                </a>
+            </div>
         </div>
         {% if (key+1)%4 == 0 and (key+1) < new|length %}
             </div>
@@ -30,8 +38,16 @@
     <div class="row">
     {% for key, e in old %}
         <div class="col-sm-3">
-            <div class="news-img"><img src="{{ asset('images/' ~ e.image) }}" /></div>
-            <div class="exhibit-title"><h2>{{ e.title }}</h2></div>
+            <div class="news-img">
+                <a href="{{ path('exhibit_show', {'slug': e.slug}) }}">
+                    <img src="{{ asset('images/' ~ e.image) }}" />
+                </a>
+            </div>
+            <div class="exhibit-title">
+                <a href="{{ path('exhibit_show', {'slug': e.slug}) }}">
+                    <h2>{{ e.title }}</h2>
+                </a>
+            </div>
         </div>
         {% if (key+1)%4 == 0 and (key+1) < new|length %}
             </div>

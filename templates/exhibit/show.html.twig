@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ exhibit.title }} - {{ parent() }}{% endblock %}
+
+{% block content %}
+<div class="container exhibit-container">
+    <div class="exhibit-title"><h1>{{ exhibit.title }}</h1></div>
+    <div class="exhibit-image"><img src="{{ asset('images/' ~ exhibit.image) }}" class="img-responsive" /></div>
+    <div class="exhibit-desc">
+        {{ exhibit.description|raw }}
+    </div>
+
+</div>
+{% endblock %}

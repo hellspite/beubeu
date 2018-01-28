@@ -30,7 +30,12 @@ class ExhibitController extends Controller
     * @Route("/mostre/{slug}", name="exhibit_show")
     */
     public function show($slug){
-        return $this->render('exhibit/show.html.twig');
+        
+        $exhibit = $this->getDoctrine()
+            ->getRepository(Exhibit::class)
+            ->findOneBy(['slug' => $slug]);
+
+        return $this->render('exhibit/show.html.twig', array('exhibit' => $exhibit));
     }
 
     /**
