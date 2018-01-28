@@ -13,16 +13,25 @@ class PerformanceRepository extends ServiceEntityRepository
         parent::__construct($registry, Performance::class);
     }
 
-    /*
-    public function findBySomething($value)
-    {
-        return $this->createQueryBuilder('p')
-            ->where('p.something = :value')->setParameter('value', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
+    public function getThisYearByDate(){
+        $thisYear = date("Y");
+
+        return $this->createQueryBuilder('e')
+            ->where('YEAR(e.when) = :when')->setParameter('when', $thisYear)
+            ->orderBy('e.created', 'DESC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
+    public function getOldByDate(){
+        $thisYear = date("Y");
+
+        return $this->createQueryBuilder('e')
+            ->where('YEAR(e.when) < :when')->setParameter('when', $thisYear)
+            ->orderBy('e.created', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }
