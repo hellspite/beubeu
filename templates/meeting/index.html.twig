@@ -1,25 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Concerti e Performance - {{ parent() }}{% endblock %}
+{% block title %}Incontri - {{ parent() }}{% endblock %}
 
 {% block menu %}
-    {{ include('menu.html.twig', {'active': 'performance'}) }}
+    {{ include('menu.html.twig', {'active': 'meeting'}) }}
 {% endblock %}
 
 {% block content %}
 <div class="container exhibit-container">
-    <h1>Concerti e Performance</h1>
+    <h1>Incontri</h1>
 
     <div class="row">
     {% for key, e in new %}
         <div class="col-sm-3">
             <div class="news-img">
-                <a href="{{ path('performance_show', {'slug': e.slug}) }}">
+                <a href="{{ path('meeting_show', {'slug': e.slug}) }}">
                     <img src="{{ asset('images/' ~ e.image) }}" />
                 </a>
             </div>
             <div class="exhibit-title">
-                <a href="{{ path('performance_show', {'slug': e.slug}) }}">
+                <a href="{{ path('meeting_show', {'slug': e.slug}) }}">
                     <h2>{{ e.title }}</h2>
                 </a>
             </div>
@@ -39,12 +39,12 @@
     {% for key, e in old %}
         <div class="col-sm-3">
             <div class="news-img">
-                <a href="{{ path('performance_show', {'slug': e.slug}) }}">
+                <a href="{{ path('meeting_show', {'slug': e.slug}) }}">
                     <img src="{{ asset('images/' ~ e.image) }}" />
                 </a>
             </div>
             <div class="exhibit-title">
-                <a href="{{ path('performance_show', {'slug': e.slug}) }}">
+                <a href="{{ path('meeting_show', {'slug': e.slug}) }}">
                     <h2>{{ e.title }}</h2>
                 </a>
             </div>

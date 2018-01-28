@@ -2,15 +2,15 @@
 
 namespace App\Repository;
 
-use App\Entity\Performance;
+use App\Entity\Meeting;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
-class PerformanceRepository extends ServiceEntityRepository
+class MeetingRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Performance::class);
+        parent::__construct($registry, Meeting::class);
     }
 
     public function getThisYearByDate(){
