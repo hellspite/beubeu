@@ -6,6 +6,7 @@ use App\Entity\Exhibit;
 use App\Entity\News;
 use App\Entity\Performance;
 use App\Entity\Meeting;
+use App\Entity\Workshop;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -127,6 +128,46 @@ class AppFixtures extends Fixture{
 
             $news->setSourceId($meeting->getId());
             $news->setSource('Meeting');
+
+            $manager->persist($news);
+            $manager->flush();
+        } 
+
+        for($i=11; $i<21; $i++){
+            $workshop = new Workshop();
+
+            $workshop->setTitle("Workshop ".$i);
+            $workshop->setImage("workshop".rand(1,3).".jpg");
+            $workshop->setDescription("Descrizione workshop ".$i);
+            $workshop->setWhendate(new \DateTime('2017-8-19'));
+
+            $manager->persist($workshop);
+            $manager->flush();
+
+            $news = new News();
+
+            $news->setSourceId($workshop->getId());
+            $news->setSource('Workshop');
+
+            $manager->persist($news);
+            $manager->flush();
+        } 
+
+        for($i=1; $i<11; $i++){
+            $workshop = new Workshop();
+
+            $workshop->setTitle("Workshop ".$i);
+            $workshop->setImage("workshop".rand(1,3).".jpg");
+            $workshop->setDescription("Descrizione workshop ".$i);
+            $workshop->setWhendate(new \DateTime('2018-08-20'));
+
+            $manager->persist($workshop);
+            $manager->flush();
+
+            $news = new News();
+
+            $news->setSourceId($workshop->getId());
+            $news->setSource('Workshop');
 
             $manager->persist($news);
             $manager->flush();
