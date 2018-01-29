@@ -13,16 +13,26 @@ class StreetRepository extends ServiceEntityRepository
         parent::__construct($registry, Street::class);
     }
 
-    /*
-    public function findBySomething($value)
-    {
-        return $this->createQueryBuilder('s')
-            ->where('s.something = :value')->setParameter('value', $value)
-            ->orderBy('s.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+    public function getThisYearByDate(){
+        $thisYear = date("Y");
+
+        $conn = $this->getEntityManager()
+            ->getConnection();
+        $sql = 'SELECT * FROM street WHERE YEAR(whendate) = '.$thisYear;
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+
     }
-    */
+
+    public function getOldByDate(){
+        $thisYear = date("Y");
+
+        $conn = $this->getEntityManager()
+            ->getConnection();
+        $sql = 'SELECT * FROM street WHERE YEAR(whendate) < '.$thisYear;
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }
