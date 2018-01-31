@@ -8,6 +8,7 @@ use App\Entity\Performance;
 use App\Entity\Meeting;
 use App\Entity\Workshop;
 use App\Entity\Street;
+use App\Entity\Event;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -209,6 +210,46 @@ class AppFixtures extends Fixture{
 
             $news->setSourceId($street->getId());
             $news->setSource('Street');
+
+            $manager->persist($news);
+            $manager->flush();
+        } 
+
+        for($i=11; $i<21; $i++){
+            $event = new Event();
+
+            $event->setTitle("Evento collaterale ".$i);
+            $event->setImage("event".rand(1,3).".jpg");
+            $event->setDescription("Descrizione evento collaterale ".$i);
+            $event->setWhendate(new \DateTime('2017-8-19'));
+
+            $manager->persist($event);
+            $manager->flush();
+
+            $news = new News();
+
+            $news->setSourceId($event->getId());
+            $news->setSource('Event');
+
+            $manager->persist($news);
+            $manager->flush();
+        } 
+
+        for($i=1; $i<11; $i++){
+            $event = new Event();
+
+            $event->setTitle("Evento collaterale ".$i);
+            $event->setImage("event".rand(1,3).".jpg");
+            $event->setDescription("Descrizione evento collaterale ".$i);
+            $event->setWhendate(new \DateTime('2018-08-20'));
+
+            $manager->persist($event);
+            $manager->flush();
+
+            $news = new News();
+
+            $news->setSourceId($event->getId());
+            $news->setSource('Event');
 
             $manager->persist($news);
             $manager->flush();
