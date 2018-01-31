@@ -7,6 +7,7 @@ use App\Entity\News;
 use App\Entity\Performance;
 use App\Entity\Meeting;
 use App\Entity\Workshop;
+use App\Entity\Street;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -168,6 +169,46 @@ class AppFixtures extends Fixture{
 
             $news->setSourceId($workshop->getId());
             $news->setSource('Workshop');
+
+            $manager->persist($news);
+            $manager->flush();
+        } 
+
+        for($i=11; $i<21; $i++){
+            $street = new Street();
+
+            $street->setTitle("Intervento ".$i);
+            $street->setImage("street".rand(1,3).".jpg");
+            $street->setDescription("Descrizione intervento ".$i);
+            $street->setWhendate(new \DateTime('2017-8-19'));
+
+            $manager->persist($street);
+            $manager->flush();
+
+            $news = new News();
+
+            $news->setSourceId($street->getId());
+            $news->setSource('Street');
+
+            $manager->persist($news);
+            $manager->flush();
+        } 
+
+        for($i=1; $i<11; $i++){
+            $street = new Street();
+
+            $street->setTitle("Intervento ".$i);
+            $street->setImage("street".rand(1,3).".jpg");
+            $street->setDescription("Descrizione intervento ".$i);
+            $street->setWhendate(new \DateTime('2018-08-20'));
+
+            $manager->persist($street);
+            $manager->flush();
+
+            $news = new News();
+
+            $news->setSourceId($street->getId());
+            $news->setSource('Street');
 
             $manager->persist($news);
             $manager->flush();
