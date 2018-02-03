@@ -98,7 +98,7 @@ class AppFixtures extends Fixture{
         for($i=11; $i<21; $i++){
             $meeting = new Meeting();
 
-            $meeting->setTitle("Meeting ".$i);
+            $meeting->setTitle("Incontro ".$i);
             $meeting->setImage("meeting".rand(1,3).".jpg");
             $meeting->setDescription("Descrizione incontro ".$i);
             $meeting->setWhendate(new \DateTime('2017-8-19'));
@@ -118,7 +118,7 @@ class AppFixtures extends Fixture{
         for($i=1; $i<11; $i++){
             $meeting = new Meeting();
 
-            $meeting->setTitle("Meeting ".$i);
+            $meeting->setTitle("Incontro ".$i);
             $meeting->setImage("meeting".rand(1,3).".jpg");
             $meeting->setDescription("Descrizione incontro ".$i);
             $meeting->setWhendate(new \DateTime('2018-08-20'));
