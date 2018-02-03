@@ -1,6 +1,8 @@
 framework:
     secret: '%env(APP_SECRET)%'
     default_locale: it
+    translator:
+        fallback: ['it']
     #csrf_protection: ~
     #http_method_override: true
 
