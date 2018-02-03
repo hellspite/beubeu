@@ -1,6 +1,16 @@
 easy_admin:
+    site_name: 'Beu-Beu Art Festival Amministrazione'
+    formats:
+        datetime: 'd M Y H:i'
+    design:
+        brand_color: '000'
     entities:
         # List the entity class name you want to manage
-        - App\Entity\Exhibit
+        Mostra:
+            class: App\Entity\Exhibit
+            label: 'Mostre'
+            list:
+                title: 'Lista Mostre'
+                fields: ['title', {property: 'image', type: 'image', base_path: '/images/'}, 'created']
 #        - App\Entity\Category
 #        - App\Entity\User
