@@ -9,6 +9,8 @@ easy_admin:
         Mostra:
             class: App\Entity\Exhibit
             label: 'Mostre'
+            form:
+                fields: ['title', 'image', 'description', 'year']
             list:
                 title: 'Lista Mostre'
                 fields: ['title', {property: 'image', type: 'image', base_path: '/images/'}, 'created']
