@@ -3,12 +3,5 @@
 {% block title %}{{ workshop.title }} - {{ parent() }}{% endblock %}
 
 {% block content %}
-<div class="container exhibit-container">
-    <div class="exhibit-title"><h1>{{ workshop.title }}</h1></div>
-    <div class="exhibit-image"><img src="{{ asset('images/' ~ workshop.image) }}" class="img-responsive" /></div>
-    <div class="exhibit-desc">
-        {{ workshop.description|raw }}
-    </div>
-
-</div>
+    {{ include('generalshow.html.twig', {'type': 'workshop', 'obj': workshop}) }}
 {% endblock %}
