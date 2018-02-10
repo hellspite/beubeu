@@ -14,8 +14,6 @@ class DefaultController extends Controller{
     */
     public function index(){
 
-        //TODO: completare funzione
-
         $news = $this->getDoctrine()
             ->getRepository(News::class)
             ->getAllByDate();
@@ -29,6 +27,31 @@ class DefaultController extends Controller{
                 case "Exhibit":
                     $articles[] = $this->getDoctrine()
                         ->getRepository(Exhibit::class)
+                        ->findById($n->getSourceId());
+                    break;
+                case "Event":
+                    $articles[] = $this->getDoctrine()
+                        ->getRepository(Event::class)
+                        ->findById($n->getSourceId());
+                    break;
+                case "Meeting":
+                    $articles[] = $this->getDoctrine()
+                        ->getRepository(Meeting::class)
+                        ->findById($n->getSourceId());
+                    break;
+                case "Performance":
+                    $articles[] = $this->getDoctrine()
+                        ->getRepository(Performance::class)
+                        ->findById($n->getSourceId());
+                    break;
+                case "Street":
+                    $articles[] = $this->getDoctrine()
+                        ->getRepository(Street::class)
+                        ->findById($n->getSourceId());
+                    break;
+                case "Workshop":
+                    $articles[] = $this->getDoctrine()
+                        ->getRepository(Workshop::class)
                         ->findById($n->getSourceId());
                     break;
             }
