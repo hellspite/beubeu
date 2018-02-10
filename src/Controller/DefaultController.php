@@ -14,13 +14,17 @@ class DefaultController extends Controller{
     */
     public function index(){
 
+        //TODO: completare funzione
+
         $news = $this->getDoctrine()
             ->getRepository(News::class)
             ->getAllByDate();
 
         $articles = [];
+        $classes = [];
         foreach($news as $n){
             $class = $n->getSource();
+            $classes[] = strtolower($n->getSource());
             switch($class){
                 case "Exhibit":
                     $articles[] = $this->getDoctrine()
@@ -30,6 +34,6 @@ class DefaultController extends Controller{
             }
         }
         
-        return $this->render('default/index.html.twig', array('articles' => $articles));
+        return $this->render('default/index.html.twig', array('articles' => $articles, 'classes' => $classes));
     }
 }

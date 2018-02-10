@@ -10,52 +10,7 @@
 <div class="container exhibit-container">
     <h1>Incontri</h1>
 
-    <div class="row">
-    {% for key, e in new %}
-        <div class="col-sm-3">
-            <div class="news-img">
-                <a href="{{ path('meeting_show', {'slug': e.slug}) }}">
-                    <img src="{{ asset('images/' ~ e.image) | imagine_filter('squared_thumbnail') }}" />
-                </a>
-            </div>
-            <div class="exhibit-title">
-                <a href="{{ path('meeting_show', {'slug': e.slug}) }}">
-                    <h2>{{ e.title }}</h2>
-                </a>
-            </div>
-        </div>
-        {% if (key+1)%4 == 0 and (key+1) < new|length %}
-            </div>
-            <div class="row">
-        {%  endif %}
-    {% endfor %}
-    </div>
-
-</div>
-
-<div class="container exhibit-container">
-    <h1>Edizioni Passate</h1>
-    <div class="row">
-    {% for key, e in old %}
-        <div class="col-sm-3">
-            <div class="news-img">
-                <a href="{{ path('meeting_show', {'slug': e.slug}) }}">
-                    <img src="{{ asset('images/' ~ e.image) | imagine_filter('squared_thumbnail') }}" />
-                </a>
-            </div>
-            <div class="exhibit-title">
-                <a href="{{ path('meeting_show', {'slug': e.slug}) }}">
-                    <h2>{{ e.title }}</h2>
-                </a>
-            </div>
-        </div>
-        {% if (key+1)%4 == 0 and (key+1) < new|length %}
-            </div>
-            <div class="row">
-        {%  endif %}
-    {% endfor %}
-    </div>
-</div>
+    {{ include('generalindex.html.twig', {'type': 'meeting'}) }}
 
 {% endblock %}
 
