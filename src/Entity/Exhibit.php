@@ -5,10 +5,13 @@ namespace App\Entity;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use App\Entity\News;
 use Doctrine\ORM\Mapping as ORM;
+use  Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ExhibitRepository")
+ * @ORM\HasLifecycleCallbacks()
  * @Vich\Uploadable
  */
 class Exhibit
@@ -118,5 +121,21 @@ class Exhibit
 
     public function getCreated(){
         return $this->created;
+    }
+
+    /**
+    * @ORM\PostPersist
+    */
+    public function createNews($args){
+
+        $em = $args->getEntityManager();
+        $news = new News();    
+        $news->setSourceId($this->getId());
+        $news->setSource('Exhibit');
+
+        $em->persist($news);
+        $em->flush();
+
+
     }
 }
