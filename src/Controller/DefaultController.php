@@ -9,6 +9,7 @@ use App\Entity\Exhibit;
 use App\Entity\Performance;
 use App\Entity\Meeting;
 use App\Entity\Workshop;
+use App\Entity\Street;
 use App\Entity\Event;
 
 class DefaultController extends Controller{

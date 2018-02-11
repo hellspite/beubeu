@@ -4,9 +4,14 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use App\Entity\News;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\StreetRepository")
+ * @ORM\HasLifecycleCallbacks()
+ * @Vich\Uploadable
  */
 class Street
 {
@@ -26,6 +31,12 @@ class Street
     * @ORM\Column(type="string", length=250) 
     */
     private $image;
+
+    /**
+    * @Vich\UploadableField(mapping="street_images", fileNameProperty="image")
+    * @var File
+    */
+    private $imageFile;
 
     /**
     * @ORM\Column(type="text") 
@@ -49,6 +60,12 @@ class Street
     */
     private $created;
 
+    /**
+    * @ORM\Column(type="datetime", nullable=true)
+    * @var \DateTime
+    */
+    private $updated;
+
     public function getId(){
         return $this->id;
     }
@@ -67,6 +84,18 @@ class Street
 
     public function setImage($image){
         $this->image = $image;
+    }
+
+    public function getImageFile(){
+        return $this->imageFile;
+    }
+
+    public function setImageFile(File $image = null){
+        $this->imageFile = $image;
+
+        if($image){
+            $this->updated = new \DateTime('now');
+        }
     }
 
     public function getDescription(){
@@ -91,5 +120,20 @@ class Street
 
     public function getCreated(){
         return $this->created;
+    }
+
+    /**
+    * @ORM\PostPersist
+    */
+    public function createNews($args){
+
+        $em = $args->getEntityManager();
+        $news = new News();    
+        $news->setSourceId($this->getId());
+        $news->setSource('Street');
+
+        $em->persist($news);
+        $em->flush();
+
     }
 }

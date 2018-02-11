@@ -38,6 +38,14 @@ easy_admin:
             list:
                 title: 'Lista Workshop'
                 fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/workshop/'}, 'created']
+        Interventi:
+            class: App\Entity\Street
+            label: 'Interventi Urbani'
+            form:
+                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', 'whendate']
+            list:
+                title: 'Lista Interventi Urbani'
+                fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/street/'}, 'created']
         Eventi:
             class: App\Entity\Event
             label: 'Eventi Collaterali'
