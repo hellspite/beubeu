@@ -30,3 +30,11 @@ easy_admin:
             list:
                 title: 'Lista Incontri'
                 fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/meeting/'}, 'created']
+        Workshop:
+            class: App\Entity\Workshop
+            label: 'Workshop'
+            form:
+                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', 'whendate']
+            list:
+                title: 'Lista Workshop'
+                fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/workshop/'}, 'created']

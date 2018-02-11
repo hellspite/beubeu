@@ -8,6 +8,7 @@ use App\Entity\News;
 use App\Entity\Exhibit;
 use App\Entity\Performance;
 use App\Entity\Meeting;
+use App\Entity\Workshop;
 
 class DefaultController extends Controller{
 
