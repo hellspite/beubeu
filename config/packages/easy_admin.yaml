@@ -22,3 +22,11 @@ easy_admin:
             list:
                 title: 'Lista Performance'
                 fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/performance/'}, 'created']
+        Incontri:
+            class: App\Entity\Meeting
+            label: 'Incontri'
+            form:
+                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', 'whendate']
+            list:
+                title: 'Lista Incontri'
+                fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/meeting/'}, 'created']

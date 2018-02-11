@@ -7,6 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\News;
 use App\Entity\Exhibit;
 use App\Entity\Performance;
+use App\Entity\Meeting;
 
 class DefaultController extends Controller{
 

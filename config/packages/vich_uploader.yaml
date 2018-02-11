@@ -8,3 +8,6 @@ vich_uploader:
         performance_images:
             uri_prefix: /uploads/images/performance
             upload_destination: '%kernel.project_dir%/public/uploads/images/performance'
+        meeting_images:
+            uri_prefix: /uploads/images/meeting
+            upload_destination: '%kernel.project_dir%/public/uploads/images/meeting'
