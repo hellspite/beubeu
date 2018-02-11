@@ -18,7 +18,7 @@ class EventRepository extends ServiceEntityRepository
 
         $conn = $this->getEntityManager()
             ->getConnection();
-        $sql = 'SELECT * FROM event WHERE YEAR(whendate) = '.$thisYear;
+        $sql = 'SELECT * FROM event WHERE YEAR(whendate) = '.$thisYear.' ORDER BY CREATED DESC';
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -30,7 +30,7 @@ class EventRepository extends ServiceEntityRepository
 
         $conn = $this->getEntityManager()
             ->getConnection();
-        $sql = 'SELECT * FROM event WHERE YEAR(whendate) < '.$thisYear;
+        $sql = 'SELECT * FROM event WHERE YEAR(whendate) < '.$thisYear.' ORDER BY CREATED DESC';
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();

@@ -18,7 +18,7 @@ class WorkshopRepository extends ServiceEntityRepository
 
         $conn = $this->getEntityManager()
             ->getConnection();
-        $sql = 'SELECT * FROM workshop WHERE YEAR(whendate) = '.$thisYear;
+        $sql = 'SELECT * FROM workshop WHERE YEAR(whendate) = '.$thisYear.' ORDER BY CREATED DESC';
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -30,7 +30,7 @@ class WorkshopRepository extends ServiceEntityRepository
 
         $conn = $this->getEntityManager()
             ->getConnection();
-        $sql = 'SELECT * FROM workshop WHERE YEAR(whendate) < '.$thisYear;
+        $sql = 'SELECT * FROM workshop WHERE YEAR(whendate) < '.$thisYear.' ORDER BY CREATED DESC';
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();
