@@ -13,6 +13,12 @@ easy_admin:
                 fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', 'year']
             list:
                 title: 'Lista Mostre'
-                fields: ['title', {property: 'image', type: 'image', base_path: '/images/'}, 'created']
-#        - App\Entity\Category
-#        - App\Entity\User
+                fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/exhibit/'}, 'created']
+        Performance:
+            class: App\Entity\Performance
+            label: 'Concerti e Performance'
+            form:
+                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', 'whendate']
+            list:
+                title: 'Lista Performance'
+                fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/performance/'}, 'created']

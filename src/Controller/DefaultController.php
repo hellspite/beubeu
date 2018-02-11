@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\News;
 use App\Entity\Exhibit;
+use App\Entity\Performance;
 
 class DefaultController extends Controller{
 
