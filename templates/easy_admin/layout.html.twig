@@ -14,7 +14,7 @@
             <style>
                 {{ easyadmin_config('_internal.custom_css')|raw }}
             </style>
-            <link href="{{ asset('css/bootstrap-datepicker.min.css') }}" rel="stylesheet" />
+            <link href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" />
         {% endblock %}
 
         {% for css_asset in easyadmin_config('design.assets.css') %}
@@ -163,16 +163,18 @@
         {% for js_asset in easyadmin_config('design.assets.js') %}
             <script src="{{ asset(js_asset) }}"></script>
         {% endfor %}
-<script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
+<script src="{{ asset('js/locales/bootstrap-datetimepicker.it.js') }}"></script>
 <script>
     $(document).ready(function() {
         // you may need to change this code if you are not using Bootstrap Datepicker
-        $('.js-datepicker').datepicker({
-            format: 'dd/mm/yyyy',
+        $('.js-datepicker').datetimepicker({
+            format: 'dd/mm/yyyy hh:ii',
+            autoclose: true,
             todayBtn: "linked",
             language: "it",
             weekStart: 1,
-            minuteStep: 15
+            minuteStep: 30
         });
     });
 </script>
