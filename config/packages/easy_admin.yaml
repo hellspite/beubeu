@@ -18,7 +18,7 @@ easy_admin:
             class: App\Entity\Performance
             label: 'Concerti e Performance'
             form:
-                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', 'whendate']
+                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', {property: 'whendate', type_options: {'widget': 'single_text', 'format': 'dd/MM/yyyy H:mm', 'attr': {'class': 'js-datepicker'}}}]
             list:
                 title: 'Lista Performance'
                 fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/performance/'}, 'created']
