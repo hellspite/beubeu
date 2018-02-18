@@ -1,7 +1,7 @@
 easy_admin:
     site_name: 'Beu-Beu Art Festival Amministrazione'
     formats:
-        datetime: 'd M Y H:i'
+        datetime: 'd M Y HH:ii'
     design:
         brand_color: '000'
     entities:
@@ -26,7 +26,7 @@ easy_admin:
             class: App\Entity\Meeting
             label: 'Incontri'
             form:
-                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', 'whendate']
+                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', {property: 'whendate', type_options: {'widget': 'single_text', 'format': 'dd/MM/yyyy H:mm', 'attr': {'class': 'js-datepicker'}}}]
             list:
                 title: 'Lista Incontri'
                 fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/meeting/'}, 'created']
@@ -34,7 +34,7 @@ easy_admin:
             class: App\Entity\Workshop
             label: 'Workshop'
             form:
-                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', 'whendate']
+                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', {property: 'whendate', type_options: {'widget': 'single_text', 'format': 'dd/MM/yyyy H:mm', 'attr': {'class': 'js-datepicker'}}}]
             list:
                 title: 'Lista Workshop'
                 fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/workshop/'}, 'created']
@@ -42,7 +42,7 @@ easy_admin:
             class: App\Entity\Street
             label: 'Interventi Urbani'
             form:
-                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', 'whendate']
+                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', {property: 'whendate', type_options: {'widget': 'single_text', 'format': 'dd/MM/yyyy H:mm', 'attr': {'class': 'js-datepicker'}}}]
             list:
                 title: 'Lista Interventi Urbani'
                 fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/street/'}, 'created']
@@ -50,7 +50,7 @@ easy_admin:
             class: App\Entity\Event
             label: 'Eventi Collaterali'
             form:
-                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', 'whendate']
+                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', {property: 'whendate', type_options: {'widget': 'single_text', 'format': 'dd/MM/yyyy H:mm', 'attr': {'class': 'js-datepicker'}}}]
             list:
                 title: 'Lista Eventi Collaterali'
                 fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/event/'}, 'created']
