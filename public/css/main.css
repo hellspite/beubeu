@@ -61,7 +61,11 @@
     padding:0;
 }
 
-.exhibit-title{
+.news-title a, .exhibit-title a{
+    color:#000;
+}
+
+.news-title, .exhibit-title{
     text-align:center;
 }
 
