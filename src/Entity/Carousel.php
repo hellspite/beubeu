@@ -26,7 +26,7 @@ class Carousel
     private $image;
 
     /**
-    * @Vich\UploadableField(mapping="exhibit_images", fileNameProperty="image")
+    * @Vich\UploadableField(mapping="carousel_images", fileNameProperty="image")
     * @var File
     */
     private $imageFile;

@@ -1,11 +1,19 @@
 easy_admin:
     site_name: 'Beu-Beu Art Festival Amministrazione'
     formats:
-        datetime: 'd M Y HH:ii'
+        datetime: 'd M Y H:i'
     design:
         brand_color: '000'
     entities:
         # List the entity class name you want to manage
+        Carousel:
+            class: App\Entity\Carousel
+            label: 'Carousel'
+            form:
+                fields: [{property: 'imageFile', type: 'vich_image'}]
+            list:
+                title: 'Lista Immagini Carousel'
+                fields: [{property: 'image', type: 'image', base_path: '/uploads/images/carousel/'}, 'created']
         Mostra:
             class: App\Entity\Exhibit
             label: 'Mostre'
