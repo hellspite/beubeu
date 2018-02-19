@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Carousel;
 use App\Entity\News;
 use App\Entity\Exhibit;
 use App\Entity\Performance;
@@ -18,6 +19,10 @@ class DefaultController extends Controller{
     * @Route("/", name="homepage")
     */
     public function index(){
+
+        $carousels = $this->getDoctrine()
+            ->getRepository(Carousel::class)
+            ->findAll();
 
         $news = $this->getDoctrine()
             ->getRepository(News::class)
@@ -62,6 +67,6 @@ class DefaultController extends Controller{
             }
         }
         
-        return $this->render('default/index.html.twig', array('articles' => $articles, 'classes' => $classes));
+        return $this->render('default/index.html.twig', array('carousels' => $carousels, 'articles' => $articles, 'classes' => $classes));
     }
 }
