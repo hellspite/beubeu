@@ -1,6 +1,6 @@
 framework:
     secret: '%env(APP_SECRET)%'
-    default_locale: it
+    default_locale: 'it'
     translator:
         fallback: ['it']
     #csrf_protection: ~
