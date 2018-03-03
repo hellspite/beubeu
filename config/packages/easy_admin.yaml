@@ -10,55 +10,98 @@ easy_admin:
             class: App\Entity\Carousel
             label: 'Carousel'
             form:
-                fields: [{property: 'imageFile', type: 'vich_image'}]
+                fields: [{property: 'imageFile', type: 'vich_image', label: 'Immagine'}]
             list:
                 title: 'Lista Immagini Carousel'
-                fields: [{property: 'image', type: 'image', base_path: '/uploads/images/carousel/'}, 'created']
+                fields: [{property: 'image', type: 'image', base_path: '/uploads/images/carousel/', label: 'Immagine'}, {property: 'created', 'label': 'Creato il' }]
+
         Mostra:
             class: App\Entity\Exhibit
             label: 'Mostre'
             form:
-                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', 'year']
+                fields: 
+                  - {property: 'title', label: 'Titolo'}
+                  - {property: 'imageFile', type: 'vich_image', label: 'Immagine'}
+                  - {property: 'description', label: 'Descrizione'}
+                  - {property: 'year', label: 'Anno'}
             list:
                 title: 'Lista Mostre'
-                fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/exhibit/'}, 'created']
+                fields: 
+                  - {property: 'title', label: 'Titolo'}
+                  - {property: 'image', type: 'image', base_path: '/uploads/images/exhibit/', label: 'Immagine'}
+                  - {property: 'created', label: 'Creato il'}
         Performance:
             class: App\Entity\Performance
             label: 'Concerti e Performance'
             form:
-                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', {property: 'whendate', type_options: {'widget': 'single_text', 'format': 'dd/MM/yyyy H:mm', 'attr': {'class': 'js-datepicker'}}}]
+                fields: 
+                  - {property: 'title', label: 'Titolo'}
+                  - {property: 'imageFile', type: 'vich_image', label: 'Immagine'}
+                  - {property: 'description', label: 'Descrizione'}
+                  - {property: 'whendate', label: 'Data', type_options: {'widget': 'single_text', 'format': 'dd/MM/yyyy H:mm', 'attr': {'class': 'js-datepicker'}}}
             list:
                 title: 'Lista Performance'
-                fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/performance/'}, 'created']
+                fields: 
+                  - {property: 'title', label: 'Titolo'}
+                  - {property: 'image', type: 'image', base_path: '/uploads/images/performance/', label: 'Immagine'}
+                  - {property: 'created', label: 'Creato il'}
         Incontri:
             class: App\Entity\Meeting
             label: 'Incontri'
             form:
-                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', {property: 'whendate', type_options: {'widget': 'single_text', 'format': 'dd/MM/yyyy H:mm', 'attr': {'class': 'js-datepicker'}}}]
+                fields: 
+                  - {property: 'title', label: 'Titolo'}
+                  - {property: 'imageFile', type: 'vich_image', label: 'Immagine'}
+                  - {property: 'description', label: 'Descrizione'}
+                  - {property: 'whendate', label: 'Data', type_options: {'widget': 'single_text', 'format': 'dd/MM/yyyy H:mm', 'attr': {'class': 'js-datepicker'}}}
             list:
                 title: 'Lista Incontri'
-                fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/meeting/'}, 'created']
+                fields: 
+                  - {property: 'title', label: 'Titolo'}
+                  - {property: 'image', type: 'image', base_path: '/uploads/images/meeting/', label: 'Immagine'}
+                  - {property: 'created', label: 'Creato il'}
         Workshop:
             class: App\Entity\Workshop
             label: 'Workshop'
             form:
-                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', {property: 'whendate', type_options: {'widget': 'single_text', 'format': 'dd/MM/yyyy H:mm', 'attr': {'class': 'js-datepicker'}}}]
+                fields: 
+                  - {property: 'title', label: 'Titolo'}
+                  - {property: 'imageFile', type: 'vich_image', label: 'Immagine'}
+                  - {property: 'description', label: 'Descrizione'}
+                  - {property: 'whendate', label: 'Data', type_options: {'widget': 'single_text', 'format': 'dd/MM/yyyy H:mm', 'attr': {'class': 'js-datepicker'}}}
             list:
                 title: 'Lista Workshop'
-                fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/workshop/'}, 'created']
+                fields: 
+                  - {property: 'title', label: 'Titolo'}
+                  - {property: 'image', type: 'image', base_path: '/uploads/images/workshop/', label: 'Immagine'}
+                  - {property: 'created', label: 'Creato il'}
         Interventi:
             class: App\Entity\Street
             label: 'Interventi Urbani'
             form:
-                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', {property: 'whendate', type_options: {'widget': 'single_text', 'format': 'dd/MM/yyyy H:mm', 'attr': {'class': 'js-datepicker'}}}]
+                fields: 
+                  - {property: 'title', label: 'Titolo'}
+                  - {property: 'imageFile', type: 'vich_image', label: 'Immagine'}
+                  - {property: 'description', label: 'Descrizione'}
+                  - {property: 'whendate', label: 'Data', type_options: {'widget': 'single_text', 'format': 'dd/MM/yyyy H:mm', 'attr': {'class': 'js-datepicker'}}}
             list:
                 title: 'Lista Interventi Urbani'
-                fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/street/'}, 'created']
+                fields: 
+                  - {property: 'title', label: 'Titolo'}
+                  - {property: 'image', type: 'image', base_path: '/uploads/images/street/', label: 'Immagine'}
+                  - {property: 'created', label: 'Creato il'}
         Eventi:
             class: App\Entity\Event
             label: 'Eventi Collaterali'
             form:
-                fields: ['title', {property: 'imageFile', type: 'vich_image'}, 'description', {property: 'whendate', type_options: {'widget': 'single_text', 'format': 'dd/MM/yyyy H:mm', 'attr': {'class': 'js-datepicker'}}}]
+                fields: 
+                  - {property: 'title', label: 'Titolo'}
+                  - {property: 'imageFile', type: 'vich_image', label: 'Immagine'}
+                  - {property: 'description', label: 'Descrizione'}
+                  - {property: 'whendate', label: 'Data', type_options: {'widget': 'single_text', 'format': 'dd/MM/yyyy H:mm', 'attr': {'class': 'js-datepicker'}}}
             list:
                 title: 'Lista Eventi Collaterali'
-                fields: ['title', {property: 'image', type: 'image', base_path: '/uploads/images/event/'}, 'created']
+                fields: 
+                  - {property: 'title', label: 'Titolo'}
+                  - {property: 'image', type: 'image', base_path: '/uploads/images/event/', label: 'Immagine'}
+                  - {property: 'created', label: 'Creato il'}
