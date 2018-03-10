@@ -161,6 +161,14 @@ class Exhibit
         $this->gallery1 = $gallery1;
     }
 
+    public function setGallery1File(File $gallery1 = null){
+        $this->gallery1File = $gallery1;
+
+        if($gallery1){
+            $this->updated = new \DateTime('now');
+        }
+    }
+
     public function getGallery1File(){
         return $this->gallery1File;
     }
@@ -173,6 +181,14 @@ class Exhibit
         $this->gallery2 = $gallery2;
     }
 
+    public function setGallery2File(File $gallery2 = null){
+        $this->gallery2File = $gallery2;
+
+        if($gallery2){
+            $this->updated = new \DateTime('now');
+        }
+    }
+
     public function getGallery2File(){
         return $this->gallery2File;
     }
@@ -183,6 +199,14 @@ class Exhibit
 
     public function setGallery3($gallery3){
         $this->gallery3 = $gallery3;
+    }
+
+    public function setGallery3File(File $gallery3 = null){
+        $this->gallery3File = $gallery3;
+
+        if($gallery3){
+            $this->updated = new \DateTime('now');
+        }
     }
 
     public function getGallery3File(){
