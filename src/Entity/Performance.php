@@ -60,7 +60,7 @@ class Performance
     private $gallery1;
 
     /**
-    * @Vich\UploadableField(mapping="exhibit_images", fileNameProperty="gallery1")
+    * @Vich\UploadableField(mapping="performance_images", fileNameProperty="gallery1")
     * @var File
     */
     private $gallery1File;
@@ -71,7 +71,7 @@ class Performance
     private $gallery2;
 
     /**
-    * @Vich\UploadableField(mapping="exhibit_images", fileNameProperty="gallery2")
+    * @Vich\UploadableField(mapping="performance_images", fileNameProperty="gallery2")
     * @var File
     */
     private $gallery2File;
@@ -82,7 +82,7 @@ class Performance
     private $gallery3;
 
     /**
-    * @Vich\UploadableField(mapping="exhibit_images", fileNameProperty="gallery3")
+    * @Vich\UploadableField(mapping="performance_images", fileNameProperty="gallery3")
     * @var File
     */
     private $gallery3File;

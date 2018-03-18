@@ -42,6 +42,9 @@ easy_admin:
                   - {property: 'imageFile', type: 'vich_image', label: 'Immagine'}
                   - {property: 'description', label: 'Descrizione'}
                   - {property: 'whendate', label: 'Data', type_options: {'widget': 'single_text', 'format': 'dd/MM/yyyy H:mm', 'attr': {'class': 'js-datepicker'}}}
+                  - {property: 'gallery1File', type: 'vich_image', label: 'Immagine Galleria 1'}
+                  - {property: 'gallery2File', type: 'vich_image', label: 'Immagine Galleria 2'}
+                  - {property: 'gallery3File', type: 'vich_image', label: 'Immagine Galleria 3'}
             list:
                 title: 'Lista Performance'
                 fields: 
