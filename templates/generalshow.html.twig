@@ -5,5 +5,27 @@
         {{ obj.description|raw }}
     </div>
 
+    {% if obj.gallery1 or obj.gallery2 or obj.gallery3 %}
+        <hr/>
+        <div class="gallery">
+            <div class="row">
+                {% if obj.gallery1 %}
+                    <div class="col-sm-4">
+                        <img src=" {{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery1) | imagine_filter('squared_thumbnail') }}" />
+                    </div>
+                {% endif %}
+                {% if obj.gallery2 %}
+                    <div class="col-sm-4">
+                        <img src=" {{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery2) | imagine_filter('squared_thumbnail') }}" />
+                    </div>
+                {% endif %}
+                {% if obj.gallery3 %}
+                    <div class="col-sm-4">
+                        <img src=" {{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery3) | imagine_filter('squared_thumbnail') }}" />
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
 </div>
 
