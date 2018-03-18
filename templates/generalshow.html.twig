@@ -9,21 +9,29 @@
         <hr/>
         <div class="gallery">
             <div class="row">
-                {% if obj.gallery1 %}
+                <div id="links">
+                    {% if obj.gallery1 %}
                     <div class="col-sm-4">
-                        <img src=" {{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery1) | imagine_filter('squared_thumbnail') }}" />
+                        <a href="{{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery1) }}">
+                            <img src=" {{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery1) | imagine_filter('squared_thumbnail') }}" />
+                        </a>
                     </div>
-                {% endif %}
-                {% if obj.gallery2 %}
+                    {% endif %}
+                    {% if obj.gallery2 %}
                     <div class="col-sm-4">
-                        <img src=" {{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery2) | imagine_filter('squared_thumbnail') }}" />
+                        <a href="{{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery2) }}">
+                            <img src=" {{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery2) | imagine_filter('squared_thumbnail') }}" />
+                        </a>
                     </div>
-                {% endif %}
-                {% if obj.gallery3 %}
+                    {% endif %}
+                    {% if obj.gallery3 %}
                     <div class="col-sm-4">
-                        <img src=" {{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery3) | imagine_filter('squared_thumbnail') }}" />
+                        <a href="{{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery3) }}">
+                            <img src=" {{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery3) | imagine_filter('squared_thumbnail') }}" />
+                        </a>
                     </div>
-                {% endif %}
+                    {% endif %}
+                </div>
             </div>
         </div>
     {% endif %}
