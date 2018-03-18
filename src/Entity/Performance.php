@@ -55,6 +55,39 @@ class Performance
     private $slug;
 
     /**
+    * @ORM\Column(type="string", length=250, nullable=true)
+    */
+    private $gallery1;
+
+    /**
+    * @Vich\UploadableField(mapping="exhibit_images", fileNameProperty="gallery1")
+    * @var File
+    */
+    private $gallery1File;
+
+    /**
+    * @ORM\Column(type="string", length=250, nullable=true) 
+    */
+    private $gallery2;
+
+    /**
+    * @Vich\UploadableField(mapping="exhibit_images", fileNameProperty="gallery2")
+    * @var File
+    */
+    private $gallery2File;
+
+    /**
+    * @ORM\Column(type="string", length=250, nullable=true) 
+    */
+    private $gallery3;
+
+    /**
+    * @Vich\UploadableField(mapping="exhibit_images", fileNameProperty="gallery3")
+    * @var File
+    */
+    private $gallery3File;
+
+    /**
     * @Gedmo\Timestampable(on="create")
     * @ORM\Column(type="datetime")
     */
@@ -116,6 +149,66 @@ class Performance
 
     public function getSlug(){
         return $this->slug;
+    }
+
+    public function getGallery1(){
+        return $this->gallery1;
+    }
+
+    public function setGallery1($gallery1){
+        $this->gallery1 = $gallery1;
+    }
+
+    public function setGallery1File(File $gallery1 = null){
+        $this->gallery1File = $gallery1;
+
+        if($gallery1){
+            $this->updated = new \DateTime('now');
+        }
+    }
+
+    public function getGallery1File(){
+        return $this->gallery1File;
+    }
+
+    public function getGallery2(){
+        return $this->gallery2;
+    }
+
+    public function setGallery2($gallery2){
+        $this->gallery2 = $gallery2;
+    }
+
+    public function setGallery2File(File $gallery2 = null){
+        $this->gallery2File = $gallery2;
+
+        if($gallery2){
+            $this->updated = new \DateTime('now');
+        }
+    }
+
+    public function getGallery2File(){
+        return $this->gallery2File;
+    }
+
+    public function getGallery3(){
+        return $this->gallery3;
+    }
+
+    public function setGallery3($gallery3){
+        $this->gallery3 = $gallery3;
+    }
+
+    public function setGallery3File(File $gallery3 = null){
+        $this->gallery3File = $gallery3;
+
+        if($gallery3){
+            $this->updated = new \DateTime('now');
+        }
+    }
+
+    public function getGallery3File(){
+        return $this->gallery3File;
     }
 
     public function getCreated(){
