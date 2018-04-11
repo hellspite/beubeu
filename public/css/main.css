@@ -1,3 +1,10 @@
+@font-face{
+    font-family: "Simoncini Garamond";
+    src: url('../fonts/Sig_____.ttf'),
+    url('../fonts/Sig_____.ttf'); /* IE */
+}
+
+
 .main-container{
     padding:0 !important;
 }
@@ -45,7 +52,8 @@
 }
 
 .news-container h1, .exhibit-container h1, .news-title h2, .exhibit-title h2{
-    font-weight:1000;
+    font-family:'Simoncini Garamond';
+    font-weight:600;
     color:#000;
 }
 
