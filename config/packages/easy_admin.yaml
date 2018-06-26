@@ -13,7 +13,7 @@ easy_admin:
                 fields: [{property: 'imageFile', type: 'vich_image', label: 'Immagine'}]
             list:
                 title: 'Lista Immagini Carousel'
-                fields: [{property: 'image', type: 'image', base_path: '/uploads/images/carousel/', label: 'Immagine'}, {property: 'created', 'label': 'Creato il' }]
+                fields: [{property: 'image', type: 'image', base_path: '../uploads/images/carousel/', label: 'Immagine'}, {property: 'created', 'label': 'Creato il' }]
 
         Mostra:
             class: App\Entity\Exhibit
@@ -31,7 +31,7 @@ easy_admin:
                 title: 'Lista Mostre'
                 fields: 
                   - {property: 'title', label: 'Titolo'}
-                  - {property: 'image', type: 'image', base_path: '/uploads/images/exhibit/', label: 'Immagine'}
+                  - {property: 'image', type: 'image', base_path: '../uploads/images/exhibit/', label: 'Immagine'}
                   - {property: 'created', label: 'Creato il'}
         Performance:
             class: App\Entity\Performance
@@ -49,7 +49,7 @@ easy_admin:
                 title: 'Lista Performance'
                 fields: 
                   - {property: 'title', label: 'Titolo'}
-                  - {property: 'image', type: 'image', base_path: '/uploads/images/performance/', label: 'Immagine'}
+                  - {property: 'image', type: 'image', base_path: '../uploads/images/performance/', label: 'Immagine'}
                   - {property: 'created', label: 'Creato il'}
         Incontri:
             class: App\Entity\Meeting
@@ -67,7 +67,7 @@ easy_admin:
                 title: 'Lista Incontri'
                 fields: 
                   - {property: 'title', label: 'Titolo'}
-                  - {property: 'image', type: 'image', base_path: '/uploads/images/meeting/', label: 'Immagine'}
+                  - {property: 'image', type: 'image', base_path: '../uploads/images/meeting/', label: 'Immagine'}
                   - {property: 'created', label: 'Creato il'}
         Workshop:
             class: App\Entity\Workshop
@@ -85,7 +85,7 @@ easy_admin:
                 title: 'Lista Workshop'
                 fields: 
                   - {property: 'title', label: 'Titolo'}
-                  - {property: 'image', type: 'image', base_path: '/uploads/images/workshop/', label: 'Immagine'}
+                  - {property: 'image', type: 'image', base_path: '../uploads/images/workshop/', label: 'Immagine'}
                   - {property: 'created', label: 'Creato il'}
         Interventi:
             class: App\Entity\Street
@@ -103,7 +103,7 @@ easy_admin:
                 title: 'Lista Interventi Urbani'
                 fields: 
                   - {property: 'title', label: 'Titolo'}
-                  - {property: 'image', type: 'image', base_path: '/uploads/images/street/', label: 'Immagine'}
+                  - {property: 'image', type: 'image', base_path: '../uploads/images/street/', label: 'Immagine'}
                   - {property: 'created', label: 'Creato il'}
         Eventi:
             class: App\Entity\Event
@@ -121,5 +121,5 @@ easy_admin:
                 title: 'Lista Eventi Collaterali'
                 fields: 
                   - {property: 'title', label: 'Titolo'}
-                  - {property: 'image', type: 'image', base_path: '/uploads/images/event/', label: 'Immagine'}
+                  - {property: 'image', type: 'image', base_path: '../uploads/images/event/', label: 'Immagine'}
                   - {property: 'created', label: 'Creato il'}
