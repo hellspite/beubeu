@@ -30,7 +30,9 @@
         <div class="col-sm-3">
             <div class="news-img">
                 <a href="{{ path(type~'_show', {'slug': e.slug}) }}">
-                    <img src="{{ asset('uploads/images/'~type~'/' ~ e.image) | imagine_filter('squared_thumbnail') }}" />
+                    {# Da ripristinare in produzione #}
+                    {#<img src="{{ asset('uploads/images/'~type~'/' ~ e.image) | imagine_filter('squared_thumbnail') }}" />#}
+                    <img src="../media/cache/squared_thumbnail/uploads/images/{{ type~'/' ~ e.image }}" />
                 </a>
             </div>
             <div class="exhibit-title">
