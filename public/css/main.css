@@ -43,6 +43,19 @@ body{
     background-color:#000 !important;
 }
 
+.navbar-nav a{
+    color: #f1b94f !important;
+}
+
+.navbar-nav a:hover{
+    color: #fff !important;
+}
+
+.navbar-nav > .active > a{
+    color: #fff !important;
+    text-decoration:underline;
+}
+
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
     background-color:#000 !important;
 }
