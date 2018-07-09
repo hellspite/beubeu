@@ -15,8 +15,22 @@
     padding:0 !important;
 }
 
-.navbar-fixed-top{
-    max-height:400px !important;
+.navbar-header img{
+    max-height:30px;
+}
+
+@media screen and (min-width:1441px){
+    .navbar-inverse{
+        min-height:110px !important;
+    }
+
+    .navbar-header img{
+        max-height:90px;
+    }
+
+    .navbar-nav{
+        margin-top:30px;
+    }
 }
 
 body{
@@ -38,10 +52,6 @@ body{
     font-size:13px;
     font-weight:bold;
     border-right:1px solid #444;
-}
-
-.navbar-header img{
-    max-height:30px;
 }
 
 .deadlines{
