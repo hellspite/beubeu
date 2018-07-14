@@ -4,6 +4,12 @@ easy_admin:
         datetime: 'd M Y H:i'
     design:
         brand_color: '000'
+        assets:
+            js:
+                - '/ckeditor5/ckeditor.js.map'
+                - '/ckeditor5/ckeditor.js'
+                - '/ckeditor5/mycustom.js'
+                - '/ckeditor5/translations/it.js'
     entities:
         # List the entity class name you want to manage
         Carousel:
@@ -22,7 +28,7 @@ easy_admin:
                 fields: 
                   - {property: 'title', label: 'Titolo'}
                   - {property: 'imageFile', type: 'vich_image', label: 'Immagine'}
-                  - {property: 'description', label: 'Descrizione'}
+                  - {property: 'description', label: 'Descrizione', css_class: 'ckeditor'}
                   - {property: 'year', label: 'Anno'}
                   - {property: 'gallery1File', type: 'vich_image', label: 'Immagine Galleria 1'}
                   - {property: 'gallery2File', type: 'vich_image', label: 'Immagine Galleria 2'}
