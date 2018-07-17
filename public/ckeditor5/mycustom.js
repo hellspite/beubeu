@@ -3,9 +3,8 @@ $(document).ready(function () {
     document.querySelectorAll( '.ckeditor textarea' )
         .forEach(function(el){
             el.removeAttribute('required');
-            language: 'it';
             ClassicEditor
-                .create( el )
+                .create( el, {language: 'it'} )
                 .then( function (editor) {
                     console.log( editor );
                     var div = el.parentNode.querySelector('.ck-editor__editable');
