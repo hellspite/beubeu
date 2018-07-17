@@ -61,7 +61,7 @@ body{
 }
 
 .carousel-container{
-    margin-top:90px;
+    margin-top:120px;
 }
 
 .carousel-inner img{
@@ -110,14 +110,14 @@ body{
 
 @media screen and (min-width:1024px){
 .navbar-nav > li > a {padding-top:5px !important; padding-bottom:5px !important;}
-.navbar {min-height:120px !important}
+.navbar {min-height:150px !important}
 
     .navbar-header img{
-        max-height:90px;
+        max-height:120px;
     }
 
     .navbar-nav{
-        margin-top:40px;
+        margin-top:55px;
     }
 
 
