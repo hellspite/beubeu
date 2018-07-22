@@ -117,9 +117,14 @@ body{
     overflow:hidden;
 }
 
+.spacer{
+    height:61px;
+    display:block;
+}
+
 .exhibit-container{
     border-top:solid 10px #000;
-    margin-top:120px;
+    margin-top:180px;
     padding:0;
 }
 
