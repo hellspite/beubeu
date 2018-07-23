@@ -13,5 +13,8 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production"
+    },
+    "dependencies": {
+        "ckeditor5-simple-upload": "^1.0.4"
     }
 }

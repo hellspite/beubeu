@@ -12,12 +12,12 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="#">Programma <span class="sr-only">(current)</span></a></li>
                 <li {% if active == 'exhibit' %}class="active"{% endif %}><a href="{{ path('exhibit') }}">Mostre</a></li>
                 <li><a href="#">Art Market</a></li>
-                <li {% if active == 'performance' %}class="active"{% endif %}><a href="{{ path('performance') }}">Concerti e Performance</a></li>
+                <li {% if active == 'performance' %}class="active"{% endif %}><a href="{{ path('performance') }}">Performance</a></li>
                 <li {% if active == 'meeting' %}class="active"{% endif %}><a href="{{ path('meeting') }}">Incontri</a></li>
                 <li {% if active == 'workshop' %}class="active"{% endif %}><a href="{{ path('workshop') }}">Workshop</a></li>
                 <li {% if active == 'street' %}class="active"{% endif %}><a href="{{ path('street') }}">Interventi Urbani</a></li>
@@ -25,8 +25,9 @@
                 <li><a href="#">L'Abbazia</a></li>
                 <li><a href="#">Press</a></li>
                 <li><a href="#">Collaborazioni</a></li>
+                <li><a href="#">About</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<div style="clear:both"></div>
+<div class="spacer"></div>
