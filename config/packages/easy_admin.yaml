@@ -144,3 +144,16 @@ easy_admin:
                   - {property: 'title', label: 'Titolo'}
                   - {property: 'image', type: 'image', base_path: 'uploads/images/event/', label: 'Immagine'}
                   - {property: 'created', label: 'Creato il'}
+
+        About:
+            disabled_actions: ['new']
+            class: App\Entity\About
+            label: 'About'
+            form:
+                fields: 
+                  - {property: 'content', label: 'Contenuto', css_class: 'summernote'}
+            list:
+                title: About
+                fields: 
+                  - {property: 'content', label: 'Contenuto', type: 'raw'}
+                actions: ['edit', '-delete']
