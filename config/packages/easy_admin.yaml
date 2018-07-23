@@ -22,6 +22,17 @@ easy_admin:
                 title: 'Lista Immagini Carousel'
                 fields: [{property: 'image', type: 'image', base_path: 'uploads/images/carousel/', label: 'Immagine'}, {property: 'created', 'label': 'Creato il' }]
 
+        Programma:
+            class: App\Entity\Program
+            label: 'Programma'
+            form:
+                fields: 
+                  - {property: 'content', label: 'Contenuto', css_class: 'summernote'}
+            list:
+                title: Programma
+                fields: 
+                  - {property: 'content', label: 'Contenuto', type: 'raw'}
+
         Mostra:
             class: App\Entity\Exhibit
             label: 'Mostre'
