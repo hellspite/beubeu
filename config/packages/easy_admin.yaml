@@ -145,6 +145,19 @@ easy_admin:
                   - {property: 'image', type: 'image', base_path: 'uploads/images/event/', label: 'Immagine'}
                   - {property: 'created', label: 'Creato il'}
 
+        Collaboration:
+            disabled_actions: ['new']
+            class: App\Entity\Collaboration
+            label: 'Collaborazioni'
+            form:
+                fields: 
+                  - {property: 'content', label: 'Contenuto', css_class: 'summernote'}
+            list:
+                title: Collaborazioni
+                fields: 
+                  - {property: 'content', label: 'Contenuto', type: 'raw'}
+                actions: ['edit', '-delete']
+
         About:
             disabled_actions: ['new']
             class: App\Entity\About

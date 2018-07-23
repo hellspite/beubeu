@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Collaborazioni - {{ parent() }}{% endblock %}
+
+{% block menu %}
+    {{ include('menu.html.twig', {'active': 'collaboration'}) }}
+{% endblock %}
+
+{% block content %}
+<div class="container exhibit-container">
+    <h1>Collaborazioni</h1>
+    
+    {{ collaboration.content | raw }}
+
+{% endblock %}
