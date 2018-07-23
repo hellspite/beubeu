@@ -14,7 +14,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#">Programma <span class="sr-only">(current)</span></a></li>
+                <li {% if active == 'program' %}class="active"{% endif %}><a href="{{ path('program') }}">Programma</a></li>
                 <li {% if active == 'exhibit' %}class="active"{% endif %}><a href="{{ path('exhibit') }}">Mostre</a></li>
                 <li><a href="#">Art Market</a></li>
                 <li {% if active == 'performance' %}class="active"{% endif %}><a href="{{ path('performance') }}">Performance</a></li>
