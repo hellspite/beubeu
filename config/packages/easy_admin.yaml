@@ -23,6 +23,7 @@ easy_admin:
                 fields: [{property: 'image', type: 'image', base_path: 'uploads/images/carousel/', label: 'Immagine'}, {property: 'created', 'label': 'Creato il' }]
 
         Programma:
+            disabled_actions: ['new']
             class: App\Entity\Program
             label: 'Programma'
             form:
@@ -32,6 +33,7 @@ easy_admin:
                 title: Programma
                 fields: 
                   - {property: 'content', label: 'Contenuto', type: 'raw'}
+                actions: ['edit', '-delete']
 
         Mostra:
             class: App\Entity\Exhibit
