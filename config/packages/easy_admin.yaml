@@ -22,6 +22,19 @@ easy_admin:
                 title: 'Lista Immagini Carousel'
                 fields: [{property: 'image', type: 'image', base_path: 'uploads/images/carousel/', label: 'Immagine'}, {property: 'created', 'label': 'Creato il' }]
 
+        Programma:
+            disabled_actions: ['new']
+            class: App\Entity\Program
+            label: 'Programma'
+            form:
+                fields: 
+                  - {property: 'content', label: 'Contenuto', css_class: 'summernote'}
+            list:
+                title: Programma
+                fields: 
+                  - {property: 'content', label: 'Contenuto', type: 'raw'}
+                actions: ['edit', '-delete']
+
         Mostra:
             class: App\Entity\Exhibit
             label: 'Mostre'
@@ -131,3 +144,42 @@ easy_admin:
                   - {property: 'title', label: 'Titolo'}
                   - {property: 'image', type: 'image', base_path: 'uploads/images/event/', label: 'Immagine'}
                   - {property: 'created', label: 'Creato il'}
+
+        Press:
+            disabled_actions: ['new']
+            class: App\Entity\Press
+            label: 'Press'
+            form:
+                fields: 
+                  - {property: 'content', label: 'Contenuto', css_class: 'summernote'}
+            list:
+                title: Press
+                fields: 
+                  - {property: 'content', label: 'Contenuto', type: 'raw'}
+                actions: ['edit', '-delete']
+
+        Collaboration:
+            disabled_actions: ['new']
+            class: App\Entity\Collaboration
+            label: 'Collaborazioni'
+            form:
+                fields: 
+                  - {property: 'content', label: 'Contenuto', css_class: 'summernote'}
+            list:
+                title: Collaborazioni
+                fields: 
+                  - {property: 'content', label: 'Contenuto', type: 'raw'}
+                actions: ['edit', '-delete']
+
+        About:
+            disabled_actions: ['new']
+            class: App\Entity\About
+            label: 'About'
+            form:
+                fields: 
+                  - {property: 'content', label: 'Contenuto', css_class: 'summernote'}
+            list:
+                title: About
+                fields: 
+                  - {property: 'content', label: 'Contenuto', type: 'raw'}
+                actions: ['edit', '-delete']

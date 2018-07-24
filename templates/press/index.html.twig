@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Press - {{ parent() }}{% endblock %}
+
+{% block menu %}
+    {{ include('menu.html.twig', {'active': 'press'}) }}
+{% endblock %}
+
+{% block content %}
+<div class="container exhibit-container">
+    <h1>Press</h1>
+    
+    {{ press.content | raw }}
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Programma - {{ parent() }}{% endblock %}
+
+{% block menu %}
+    {{ include('menu.html.twig', {'active': 'program'}) }}
+{% endblock %}
+
+{% block content %}
+<div class="container exhibit-container">
+    <h1>Programma</h1>
+    
+    {{ program.content | raw }}
+
+{% endblock %}
