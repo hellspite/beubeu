@@ -145,6 +145,19 @@ easy_admin:
                   - {property: 'image', type: 'image', base_path: 'uploads/images/event/', label: 'Immagine'}
                   - {property: 'created', label: 'Creato il'}
 
+        Press:
+            disabled_actions: ['new']
+            class: App\Entity\Press
+            label: 'Press'
+            form:
+                fields: 
+                  - {property: 'content', label: 'Contenuto', css_class: 'summernote'}
+            list:
+                title: Press
+                fields: 
+                  - {property: 'content', label: 'Contenuto', type: 'raw'}
+                actions: ['edit', '-delete']
+
         Collaboration:
             disabled_actions: ['new']
             class: App\Entity\Collaboration
