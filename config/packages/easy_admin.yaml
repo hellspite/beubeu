@@ -145,6 +145,19 @@ easy_admin:
                   - {property: 'image', type: 'image', base_path: 'uploads/images/event/', label: 'Immagine'}
                   - {property: 'created', label: 'Creato il'}
 
+        Abbey:
+            disabled_actions: ['new']
+            class: App\Entity\Abbey
+            label: 'Abbazia'
+            form:
+                fields: 
+                  - {property: 'content', label: 'Contenuto', css_class: 'summernote'}
+            list:
+                title: Abbazia
+                fields: 
+                  - {property: 'content', label: 'Contenuto', type: 'raw'}
+                actions: ['edit', '-delete']
+
         Press:
             disabled_actions: ['new']
             class: App\Entity\Press
