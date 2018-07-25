@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}L'Abbazia - {{ parent() }}{% endblock %}
+
+{% block menu %}
+    {{ include('menu.html.twig', {'active': 'abbey'}) }}
+{% endblock %}
+
+{% block content %}
+<div class="container exhibit-container">
+    <h1>L'Abbazia</h1>
+    
+    {{ abbey.content | raw }}
+
+</div>
+
+<div class="container exhibit-container">
+    <h1>Percorsi nella Valdambra</h1>
+    <a href="images/diario_viandante.pdf" target="_blank">
+        <img src="{{ asset('images/pdf.png') }}" class="img-responsive" />
+    </a>
+
+</div>
+{% endblock %}

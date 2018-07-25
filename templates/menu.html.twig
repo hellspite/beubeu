@@ -22,7 +22,7 @@
                 <li {% if active == 'workshop' %}class="active"{% endif %}><a href="{{ path('workshop') }}">Workshop</a></li>
                 <li {% if active == 'street' %}class="active"{% endif %}><a href="{{ path('street') }}">Interventi Urbani</a></li>
                 <li {% if active == 'event' %}class="active"{% endif %}><a href="{{ path('event') }}">Eventi Collaterali</a></li>
-                <li><a href="#">L'Abbazia</a></li>
+                <li {% if active == 'abbey' %}class="active"{% endif %}><a href="{{ path('abbey') }}">L'Abbazia</a></li>
                 <li {% if active == 'press' %}class="active"{% endif %}><a href="{{ path('press') }}">Press</a></li>
                 <li {% if active == 'collaboration' %}class="active"{% endif %}><a href="{{ path('collaboration') }}">Collaborazioni</a></li>
                 <li {% if active == 'about' %}class="active"{% endif %}><a href="{{ path('about') }}">About</a></li>
