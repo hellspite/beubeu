@@ -229,4 +229,17 @@ class Workshop
         $em->flush();
 
     }
+
+    /**
+    * @ORM\PreRemove
+    */
+    public function deleteNews($args){
+        $em = $args->getEntityManager();
+        $news = $em->getRepository(News::class)->findOneBySourceId($this->getId(), 'Workshop');
+
+        if($news){
+            $em->remove($news);
+            $em->flush();    
+        }
+    }
 }

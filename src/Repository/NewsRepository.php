@@ -21,4 +21,15 @@ class NewsRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+
+    public function findOneBySourceId($id, $source){
+        return $this->createQueryBuilder('n')
+            ->andWhere('n.sourceId = :id')
+            ->andWhere('n.source = :source')
+            ->setParameter('id', $id)
+            ->setParameter('source', $source)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
 }
