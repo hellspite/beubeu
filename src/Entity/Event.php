@@ -220,13 +220,15 @@ class Event
     */
     public function createNews($args){
 
-        $em = $args->getEntityManager();
-        $news = new News();    
-        $news->setSourceId($this->getId());
-        $news->setSource('Event');
+        if($this->getWhendate()->format("Y") == date("Y")){
+            $em = $args->getEntityManager();
+            $news = new News();    
+            $news->setSourceId($this->getId());
+            $news->setSource('Event');
 
-        $em->persist($news);
-        $em->flush();
+            $em->persist($news);
+            $em->flush();
+        }
 
     }
 

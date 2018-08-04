@@ -220,13 +220,15 @@ class Performance
     */
     public function createNews($args){
 
-        $em = $args->getEntityManager();
-        $news = new News();    
-        $news->setSourceId($this->getId());
-        $news->setSource('Performance');
+        if($this->getWhendate()->format("Y") == date("Y")){
+            $em = $args->getEntityManager();
+            $news = new News();    
+            $news->setSourceId($this->getId());
+            $news->setSource('Performance');
 
-        $em->persist($news);
-        $em->flush();
+            $em->persist($news);
+            $em->flush();
+        }
 
     }
 

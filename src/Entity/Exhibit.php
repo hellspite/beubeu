@@ -222,13 +222,15 @@ class Exhibit
     */
     public function createNews($args){
 
-        $em = $args->getEntityManager();
-        $news = new News();    
-        $news->setSourceId($this->getId());
-        $news->setSource('Exhibit');
+        if($this->getYear() == date("Y")){
+            $em = $args->getEntityManager();
+            $news = new News();    
+            $news->setSourceId($this->getId());
+            $news->setSource('Exhibit');
 
-        $em->persist($news);
-        $em->flush();
+            $em->persist($news);
+            $em->flush();
+        }
     }
 
     /**
