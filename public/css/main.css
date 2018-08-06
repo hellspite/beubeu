@@ -126,6 +126,7 @@ body{
     border-top:solid 10px #000;
     margin-top:180px;
     padding:0;
+    font-family:'Simoncini Garamond';
 }
 
 .news-title a, .exhibit-title a{
