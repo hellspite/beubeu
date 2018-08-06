@@ -13,21 +13,21 @@
                     {% if obj.gallery1 %}
                     <div class="col-sm-4">
                         <a href="{{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery1) }}">
-                            <img src=" {{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery1) | imagine_filter('squared_thumbnail') }}" />
+                            <img src=" {{ asset('/uploads/images/' ~ type ~ '/' ~ obj.gallery1) | imagine_filter('squared_thumbnail') }}" />
                         </a>
                     </div>
                     {% endif %}
                     {% if obj.gallery2 %}
                     <div class="col-sm-4">
                         <a href="{{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery2) }}">
-                            <img src=" {{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery2) | imagine_filter('squared_thumbnail') }}" />
+                            <img src=" {{ asset('/uploads/images/' ~ type ~ '/' ~ obj.gallery2) | imagine_filter('squared_thumbnail') }}" />
                         </a>
                     </div>
                     {% endif %}
                     {% if obj.gallery3 %}
                     <div class="col-sm-4">
                         <a href="{{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery3) }}">
-                            <img src=" {{ asset('uploads/images/' ~ type ~ '/' ~ obj.gallery3) | imagine_filter('squared_thumbnail') }}" />
+                            <img src=" {{ asset('/uploads/images/' ~ type ~ '/' ~ obj.gallery3) | imagine_filter('squared_thumbnail') }}" />
                         </a>
                     </div>
                     {% endif %}
