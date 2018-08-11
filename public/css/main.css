@@ -93,6 +93,24 @@ body{
     color:#fff;
 }
 
+footer{
+    position:relative;
+    bottom:0;
+    width:100%;
+    margin-top:20px;
+    height:80px;
+    font-size:22px;
+    padding-top:6px;
+    display:block;
+    background-color:#000;
+    color:#fff;
+}
+
+.social-icon{
+    display:inline;
+    margin-right:4px;
+}
+
 .carousel-container{
     margin-top:120px;
 }
