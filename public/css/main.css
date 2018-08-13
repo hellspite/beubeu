@@ -130,6 +130,11 @@ footer{
     color:#000;
 }
 
+.news-img img{
+    height:256px;
+    width:256px;
+}
+
 .spacer{
     height:61px;
     display:block;
