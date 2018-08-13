@@ -1,4 +1,8 @@
 <div class="container exhibit-container">
+
+    <div id="fb-root"></div>
+    <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b6eaa9939f9520011ecfb99&product=inline-share-buttons' async='async'></script>
+                    
     <div class="exhibit-title"><h1>{{ obj.title }}</h1></div>
     <div class="exhibit-image"><img src="{{ asset('uploads/images/' ~ type ~ '/' ~ obj.image) }}" class="img-responsive" /></div>
     <div class="exhibit-desc">
@@ -35,5 +39,5 @@
             </div>
         </div>
     {% endif %}
+    <div class="sharethis-inline-share-buttons"></div>
 </div>
-
