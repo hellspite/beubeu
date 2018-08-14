@@ -78,13 +78,24 @@ body{
     margin: 25px 15px 25px 0;
 }
 
-@media screen and (max-width: 1120px){
+@media screen and (max-width: 1126px){
+	.navbar-collapse{
+		padding-top:60px;
+	}
+
     .nav > li > a{
         padding-top: 20px;
         padding-bottom: 20px;
         padding-left: 4px;
         padding-right: 4px;
+	font-size:0.68em;
     }
+
+	.navbar-brand > img {
+	    height:80%;
+	    padding: 7px 15px; 
+	    width:auto;
+	}
 }
 
 .deadlines{
