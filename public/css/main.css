@@ -141,9 +141,9 @@ footer{
     color:#000;
 }
 
-.news-img{
-    max-height:300px;
-    overflow:hidden;
+.news-img img{
+    height:256px;
+    width:256px;
 }
 
 .spacer{
