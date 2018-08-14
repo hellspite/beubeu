@@ -164,6 +164,7 @@ footer{
 
 .news-title, .exhibit-title{
     text-align:center;
+	width:256px;
 }
 
 .exhibit-image img{
