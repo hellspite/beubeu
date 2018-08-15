@@ -78,7 +78,7 @@ body{
     margin: 25px 15px 25px 0;
 }
 
-@media screen and (max-width: 1126px){
+@media screen and (max-width: 1134px){
     .navbar-collapse{
         padding-top:60px;
     }
